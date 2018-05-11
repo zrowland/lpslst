@@ -1,7 +1,7 @@
 # LPS/LST Tool
-##### A tool for identifying LogRhythm SIEM log sources that are potentially being processed using an incorrect log source type
+#### A tool for identifying LogRhythm SIEM log sources that are potentially being processed using an incorrect log source type
 
-#### About
+### About
 
 Depending on the quantity of log sources being collected in your LogRhythm SIEM, it can be relatively easy to mistakenly assign a log source an incorrect log source type. I've found that I encounter this situation the most often with syslog-based log sources, especially if multiple log sources are being routed through a syslog relay/host.
 
@@ -17,7 +17,7 @@ The LPS/LST tool is written in PowerShell - it should be relatively version-agno
 
 By default, the tool will flag log source types where greater than 50% of the total log volume is only being processed/matched by the log source type's "Catch All : Level 1" MPE rule. This percentage value can be overridden to any desired value using the `-CatchAllPercent` parameter. Values below 50% are likely to generate more false-positive results. By default the script displays the results in standard output, but this can also be overidden to write the results to an output file using the `-OutputFilePath` parameter.
 
-#### Example Usage
+### Example Usage
 
 Execute script against a single "lps_detail.log" file, writing the results to an output file:
 
@@ -31,7 +31,7 @@ Execute script against a folder and overriding the default "Catch All" threshold
 
 `.\lpslst.ps1 -FolderPath ".\logs" -OutputFilePath "lst_list3.csv" -CatchAllPercent "70.0"`
 
-#### License
+### License
 
 Copyright (c) 2018 LogRhythm, Inc.
 
